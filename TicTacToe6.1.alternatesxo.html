@@ -6,9 +6,9 @@
 	function SimptactoeController($scope) {
 	$scope.board = ['','','','','','', '','','',];
 
-var gameStatus = true;
 
-	$scope.isXTurn = true;
+
+	
 
 
 
@@ -43,15 +43,15 @@ var gameStatus = true;
 // gameStatus = false; <-- add after each
 
 		
-		}
-	};		
+		
+		
 		$scope.player = true;
 
 
 
 	$scope.clicker = function(cellIndex) {
-		
-		if ($scope.board[cellIndex] != 'O') {
+		console.log($scope.board[cellIndex])
+		if ($scope.board[cellIndex] != 'O' && $scope.board[cellIndex] != 'X') {
 
 			if ($scope.player == true) {
 				$scope.board[cellIndex]= 'X'; $scope.player=false;
@@ -63,6 +63,7 @@ var gameStatus = true;
 		};
 
 	};
+};
 
 // var message = "";
 

@@ -8,25 +8,35 @@
 
 
 	$scope.clicker = function(cellIndex) {
+
+		if ($scope.board[cellIndex] === " ") {
+// it makes it so if the board is blank it puts x or o, it if is not blank it goes to the end.  How can you add Milhouse getting punched?
+
+
+
 		if ($scope.player === true) {
 			$scope.board[cellIndex]= 'X';
 		}
 		else {
 			$scope.board[cellIndex]= 'O';
 		}
+
+//$scope.winFunction();
+			
 		$scope.player = true;
-		};
+		}
 
 
 	$scope.change = function() {
 		if ($scope.player === true) {
-			$scope.player = true;
+			$scope.player = false;
 
 		}
 		else {
-			$scope.player = false;
+			$scope.player = true;
 		}
 		$scope.change();
+	}
 	}
 	};
 
@@ -53,8 +63,6 @@
 		background-color: #92D4F7;
 		color: white;
 		float: left;
-		text-align: center;
-		font-size: 25px
 		}
 	h1{
 		text-align: center;

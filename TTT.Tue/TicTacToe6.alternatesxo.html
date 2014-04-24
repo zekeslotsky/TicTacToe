@@ -10,16 +10,14 @@ var gameStatus = true;
 
 	$scope.isXTurn = true;
 
+	$scope.clicker = function(cellIndex) {
 
+		if (gameStatus === true) {
 
-	// $scope.clicker = function(cellIndex) {
+			if ($scope.board[cellIndex] === " ") {
 
-	// 	if (gameStatus === true) {
-
-			
-
-	// 		$scope.board[cellIndex] = $scope.isXTurn? "X":"O";
-	// 		$scope.isXTurn = !$scope.isXTurn; 
+			$scope.board[cellIndex] = $scope.isXTurn? "X":"O";
+			$scope.isXTurn = !$scope.isXTurn; 
 
 
 // it makes it so if the board is blank it puts x or o, it if is not blank it goes to the end.  How can you add Milhouse getting punched?
@@ -46,22 +44,19 @@ var gameStatus = true;
 		}
 	};		
 		$scope.player = true;
+		}
 
 
+	$scope.change = function() {
+		if ($scope.player === true) {
+			$scope.player = false;
 
-	$scope.clicker = function(cellIndex) {
-		
-		if ($scope.board[cellIndex] != 'O') {
-
-			if ($scope.player == true) {
-				$scope.board[cellIndex]= 'X'; $scope.player=false;
-			}
-			else {
-				$scope.board[cellIndex]= 'O'; $scope.player=true;
-			}
-
-		};
-
+		}
+		else {
+			$scope.player = true;
+		}
+		$scope.change();
+	}
 	};
 
 // var message = "";

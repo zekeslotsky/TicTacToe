@@ -6,15 +6,15 @@
 	function SimptactoeController($scope) {
 	$scope.board = ['','','','','','', '','','',];
 
-var gameStatus = true;
 
-	$scope.isXTurn = true;
+
+	
 
 
 
 	// $scope.clicker = function(cellIndex) {
 
-	// 	if (gameStatus === true) {
+
 
 			
 
@@ -43,15 +43,15 @@ var gameStatus = true;
 // gameStatus = false; <-- add after each
 
 		
-		}
-	};		
+		
+		
 		$scope.player = true;
 
 
 
 	$scope.clicker = function(cellIndex) {
-		
-		if ($scope.board[cellIndex] != 'O') {
+		console.log($scope.board[cellIndex])
+		if ($scope.board[cellIndex] != 'O' && $scope.board[cellIndex] != 'X') {
 
 			if ($scope.player == true) {
 				$scope.board[cellIndex]= 'X'; $scope.player=false;
@@ -64,6 +64,7 @@ var gameStatus = true;
 
 	};
 
+
 // var message = "";
 
 // var showMessage =  function () {
@@ -75,6 +76,49 @@ var gameStatus = true;
 //<-- displays a hidden div 
 
 
+ function checkForWinner(cells) {
+ if (cells[0]=='O' && cells[1] == 'O' && cells[2] = 'O') {
+ 	alert("O Won");
+
+ if (cells[3]=='O' && cells[4] == 'O' && cells[5] = 'O') {
+ 	alert("O Won");
+
+ if (cells[6]=='O' && cells[7] == 'O' && cells[8] = 'O') {
+ 	alert("O Won");
+
+ if (cells[0]=='O' && cells[3] == 'O' && cells[6] = 'O') {
+ 	alert("O Won");
+
+ if (cells[1]=='O' && cells[4] == 'O' && cells[7] = 'O') {
+ 	alert("O Won");
+
+  if (cells[2]=='O' && cells[5] == 'O' && cells[8] = 'O') {
+ 	alert("O Won");
+
+  if (cells[0]=='O' && cells[4] == 'O' && cells[8] = 'O') {
+ 	alert("O Won");
+
+  if (cells[2]=='O' && cells[4] == 'O' && cells[6] = 'O') {
+ 	alert("O Won");
+ }
+// copy and replace for "X Won"
+ 
+
+
+
+//win:
+	// [0] , [1] , [2] 
+	// [3], [4], [5]
+	// [6], [7], [8],
+	// [0], [3], [6],
+	// [1], [4], [7],
+	// [2], [5], [8],
+	// [0], [4], [8],
+	// [2], [4], [6],
+
+
+
+};
 	
 	</script>
 
@@ -87,6 +131,7 @@ var gameStatus = true;
 	.board { 
 		width: 500px; 
 		margin: 0 auto;
+		font-size: 40px;
 		}
 	.cells {
 		height: 150px;
@@ -95,6 +140,8 @@ var gameStatus = true;
 		background-color: #92D4F7;
 		color: white;
 		float: left;
+		text-align: center;
+		font-size: 100px;
 		}
 	h1{
 		text-align: center;
@@ -102,7 +149,7 @@ var gameStatus = true;
 
 	#result {
 		color: white;
-		font-size: 20px;
+		
 	}
 </style>
 	
